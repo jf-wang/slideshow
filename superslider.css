@@ -1,0 +1,76 @@
+.container{
+    width: 512px;
+    height: 320px;
+    /*overflow: hidden;*/
+    border: 1px solid #9d9d9d;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.4);
+    margin: 100px auto;
+    position: relative;
+    background: #fff;
+}
+[type="radio"]{
+    display: none;
+}
+.pic-wraps{
+    height: 320px;
+}
+.pic-wraps img{
+    width: 512px;
+}
+/*img是行内块元素，baseline*/
+.pic-wrap{
+    position: absolute;
+    height: 320px;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0;
+}
+
+/*如果定位的某一个图层的zindex为-1 那么这个图层就会隐藏到后面，我们看不到的位置*/
+
+.prev label,
+.next label{
+    position: absolute;
+    top:200px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: rgba(139, 70, 251, 0.15);
+    font-size: 35px;
+    color:#fff;
+}
+.next label{
+    right: 0;
+}
+.prev label{
+    left:0;
+}
+
+#forpic1:checked~.pic-wraps .pic-wrap:nth-child(1),
+#forpic2:checked~.pic-wraps .pic-wrap:nth-child(2),
+#forpic3:checked~.pic-wraps .pic-wrap:nth-child(3){
+    z-index: 0;
+    animation-name: show;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#forpic1:checked~.archor .prev label:nth-child(1),
+#forpic1:checked~.archor .next label:nth-child(1),
+#forpic2:checked~.archor .prev label:nth-child(2),
+#forpic2:checked~.archor .next label:nth-child(2),
+#forpic3:checked~.archor .prev label:nth-child(3),
+#forpic3:checked~.archor .next label:nth-child(3){
+    z-index: 1;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>纯HTML+CSS轮播图</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./superslider.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 容器：放入所有的页面主体内容 -->
+        <!-- 特殊元素，可以接受点击，input[radio] -->
+        <input type="radio" name="archor-pic" id="forpic1" checked>
+        <input type="radio" name="archor-pic" id="forpic2">
+        <input type="radio" name="archor-pic" id="forpic3">
+
+        <!-- 放置图片 -->
+        <div class="pic-wraps">
+            <div class="pic-wrap">
+                <img src="./p1.jpg" alt="Tylor Swift" width="512px">
+            </div>
+            <div class="pic-wrap">
+                <img src="./p2.jpg" alt="唐嫣" width="512px">
+            </div>
+            <div class="pic-wrap">
+                <img src="./p3.jpg" alt="高圆圆" width="512px">
+            </div>
+        </div>
+        <!-- 按钮位 -->
+        <div class="archor">
+            <div class="prev">
+                <label for="forpic3"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
+                <label for="forpic1"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
+                <label for="forpic2"><i class="fa fa-angle-double-left" aria-hidden="true"></i></label>
+            </div>
+            <div class="next">
+                <label for="forpic2"><i class="fa fa-angle-double-right" aria-hidden="true"></i></label>
+                <label for="forpic3"><i class="fa fa-angle-double-right" aria-hidden="true"></i></label>
+                <label for="forpic1"><i class="fa fa-angle-double-right" aria-hidden="true"></i></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
